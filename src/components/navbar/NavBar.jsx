@@ -40,7 +40,7 @@ function NavBar() {
       <div>
         {links.map((link) => (
           <Link key={link.id} href={link.url}>
-            {link.url}
+            {link.title}
           </Link>
         ))}
       </div>
