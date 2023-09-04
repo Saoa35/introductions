@@ -14,9 +14,9 @@ function About() {
           className={styles.img}
         />
         <div className={styles.imgText}>
-          <h1>Front End passion</h1>
+          <h1>web development passion </h1>
           <h2>
-            I love coding, it gives me power and filling that I can change the
+            I love coding, it gives me power and feeling that I can change the
             world.
           </h2>
         </div>
