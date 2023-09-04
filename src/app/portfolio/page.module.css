@@ -27,7 +27,7 @@
   background: url("/websites.jpg");
 }
 .item:nth-child(3) {
-  background: url("/apps.jpg");
+  background: url("/apps.png");
 }
 
 .title {
