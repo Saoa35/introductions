@@ -5,11 +5,18 @@ import styles from "./page.module.css";
 import Link from "next/link";
 
 function Register() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+  };
+
   return (
     <div className={styles.container}>
       <h1>Create an Account</h1>
       <h2>Please sign up to see dashboard</h2>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="User Name"
