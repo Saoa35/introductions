@@ -4,8 +4,13 @@ import useSWR from "swr";
 import styles from "./page.module.css";
 
 import React, { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
 
 function Dashboard() {
+  const session = useSession();
+
+  console.log(session);
+
   // const [data, setData] = useState([]);
   // const [error, setError] = useState(false);
   // const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +42,7 @@ function Dashboard() {
     fetcher
   );
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>
