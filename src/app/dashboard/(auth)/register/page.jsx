@@ -1,12 +1,12 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Register() {
+const Register = () => {
   const [error, setError] = useState(null);
+
   const router = useRouter();
 
   const handleSubmit = async (e) => {
@@ -21,17 +21,17 @@ function Register() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: {
+        body: JSON.stringify({
           name,
           email,
           password,
-        },
+        }),
       });
-
       res.status === 201 &&
         router.push("/dashboard/login?success=Account has been created");
-    } catch (error) {
-      setError(error);
+    } catch (err) {
+      setError(err);
+      console.log(err);
     }
   };
 
@@ -73,6 +73,6 @@ function Register() {
       </Link>
     </div>
   );
-}
+};
 
 export default Register;
