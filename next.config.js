@@ -5,6 +5,7 @@ const nextConfig = {
       "www.bhpalmbeach.com",
       "storage.googleapis.com",
       "img.freepik.com",
+      "images.unsplash.com",
     ],
   },
 };
