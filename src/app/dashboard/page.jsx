@@ -28,6 +28,16 @@ function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const title = e.target[0].value;
+    const desc = e.target[1].value;
+    const img = e.target[2].value;
+    const content = e.target[3].value;
+
+    try {
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   if (session.status == "authenticated") {
