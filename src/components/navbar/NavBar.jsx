@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { DarkModeToggle } from "../dartModeToggle/darkModeToggle";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const links = [
   {
@@ -54,12 +54,11 @@ function NavBar() {
             {link.title}
           </Link>
         ))}
-        <button
-          className={styles.logout}
-          onClick={() => console.log("Logged Out")}
-        >
-          Logout
-        </button>
+        {session.status == "authenticated" && (
+          <button className={styles.logout} onClick={signOut}>
+            Logout
+          </button>
+        )}
       </div>
     </nav>
   );

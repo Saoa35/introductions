@@ -9,7 +9,13 @@ function Login() {
   const session = useSession();
   const router = useRouter();
 
-  console.log(session);
+  if (session.status == "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (session.status == "authenticated") {
+    router?.push("dashboard");
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +44,9 @@ function Login() {
         <button className={styles.button}>Login</button>
       </form>
 
-      <button onClick={() => signIn("google")}>Login with Google</button>
+      <button onClick={() => signIn("google")} className={styles.google}>
+        Login with Google
+      </button>
     </div>
   );
 }

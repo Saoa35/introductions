@@ -62,9 +62,15 @@
 }
 
 .google {
-  background-color: rgba(228, 97, 50, 0.72);
+  background-color: rgba(237, 237, 237, 0.72);
+  border-radius: 3px;
+  padding: 5px;
+  color: #0a4d9f;
+  border: none;
+  cursor: pointer;
 }
 
 .google:hover {
-  background-color: rgba(228, 97, 50, 0.803);
+  background-color: #0a4d9f;
+  color: rgba(237, 237, 237, 0.72);
 }
