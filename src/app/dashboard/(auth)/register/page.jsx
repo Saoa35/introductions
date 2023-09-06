@@ -66,7 +66,7 @@ const Register = () => {
         {error && "Something went wrong!"}
       </form>
 
-      <span>- OR -</span>
+      <span className={styles.or}>- OR -</span>
 
       <Link href="/dashboard/login" className={styles.link}>
         Login with an existing Account

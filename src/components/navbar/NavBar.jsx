@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { DarkModeToggle } from "../dartModeToggle/darkModeToggle";
+import { useSession } from "next-auth/react";
 
 const links = [
   {
@@ -38,6 +39,8 @@ const links = [
 ];
 
 function NavBar() {
+  const session = useSession();
+
   return (
     <nav className={styles.container}>
       <Link href="/" className={styles.logo}>

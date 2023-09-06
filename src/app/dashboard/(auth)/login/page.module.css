@@ -37,7 +37,7 @@
   width: 300px;
   padding: 20px;
   cursor: pointer;
-  background-color: #53c28b;
+  background-color: #4987b0;
   border: none;
   border-radius: 5px;
   color: #eee;
@@ -45,7 +45,7 @@
 }
 
 .button:hover {
-  background-color: #4987b0;
+  background-color: #266dc3;
 }
 
 .or {

@@ -38,10 +38,15 @@
   background-color: #266dc3;
 }
 
+.or {
+  color: #bbb;
+}
+
 .link {
-  color: #5396c2;
+  text-decoration: underline;
+  color: #7d7c7c;
 }
 
 .link:hover {
-  color: #266dc3;
+  color: rgb(61, 61, 61);
 }
