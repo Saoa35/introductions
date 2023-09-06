@@ -29,6 +29,11 @@
   color: red;
 }
 
+.delete:hover {
+  color: rgb(175, 0, 0);
+  scale: 1.5;
+}
+
 .new {
   flex: 1;
   display: flex;
@@ -50,7 +55,7 @@
 .button {
   padding: 20px;
   cursor: pointer;
-  background-color: #53c28b;
+  background-color: #5399c2;
   border: none;
   border-radius: 5px;
   color: #eee;

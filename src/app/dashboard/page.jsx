@@ -2,8 +2,8 @@
 
 import useSWR from "swr";
 import styles from "./page.module.css";
-
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import React from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -26,11 +26,49 @@ function Dashboard() {
     router?.push("/dashboard/login");
   }
 
-  return (
-    <div>
-      <div>Dashboard</div>
-    </div>
-  );
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  if (session.status == "authenticated") {
+    return (
+      <div className={styles.container}>
+        <div className={styles.posts}>
+          {isLoading
+            ? "Loading..."
+            : data.map((post) => (
+                <div className={styles.post} key={post._id}>
+                  <div className={styles.imgContainer}>
+                    <Image
+                      src={post.img}
+                      alt={post.title}
+                      width={200}
+                      height={100}
+                    />
+                  </div>
+                  <h2>{post.title}</h2>
+                  <span className={styles.delete}>X</span>
+                </div>
+              ))}
+        </div>
+
+        <form className={styles.new} onSubmit={handleSubmit}>
+          <h1>Add New Post</h1>
+
+          <input type="text" placeholder="Title" className={styles.input} />
+          <input
+            type="text"
+            placeholder="Description"
+            className={styles.input}
+          />
+          <input type="text" placeholder="Image" className={styles.input} />
+          <textarea className={styles.textArea} cols={30} rows={10} />
+
+          <button className={styles.button}>Send</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Dashboard;
